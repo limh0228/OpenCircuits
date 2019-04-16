@@ -19,6 +19,7 @@ import {Camera} from "../../Camera";
 
 import {FlipFlop} from "../../../models/ioobjects/flipflops/FlipFlop";
 import {Latch} from "../../../models/ioobjects/latches/Latch";
+import {Encoder} from "../../../models/ioobjects/other/Encoder";
 import {Multiplexer} from "../../../models/ioobjects/other/Multiplexer";
 import {Demultiplexer} from "../../../models/ioobjects/other/Demultiplexer";
 import {Component} from "../../../models/ioobjects/Component";
@@ -82,9 +83,8 @@ export var ComponentRenderer = (function() {
                 MultiplexerRenderer.render(renderer, camera, object, selected);
             else if (object instanceof SevenSegmentDisplay)
                 SevenSegmentDisplayRenderer.render(renderer, camera, object, selected);
-            else if (object instanceof FlipFlop || object instanceof Latch)
-                drawBox(renderer, transform, selected);
-            else if (object instanceof IC)
+            else if (object instanceof FlipFlop || object instanceof Latch || object instanceof IC
+                || object instanceof Encoder)
                 drawBox(renderer, transform, selected);
 
             // Draw tinted image

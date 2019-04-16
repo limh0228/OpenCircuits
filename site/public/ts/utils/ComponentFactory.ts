@@ -24,12 +24,15 @@ import {TFlipFlop}  from "../models/ioobjects/flipflops/TFlipFlop";
 import {Multiplexer} from "../models/ioobjects/other/Multiplexer";
 import {Demultiplexer} from "../models/ioobjects/other/Demultiplexer";
 
+import {Encoder} from "../models/ioobjects/other/Encoder";
+
+
 const INPUTS    = [Switch, Button, ConstantLow, ConstantHigh];
 const OUTPUTS   = [LED, SevenSegmentDisplay];
 const GATES     = [BUFGate, ANDGate, ORGate, XORGate];
 const LATCHES   = [DLatch, SRLatch];
 const FLIPFLOPS = [DFlipFlop, JKFlipFlop, SRFlipFlop, TFlipFlop];
-const OTHER     = [Multiplexer, Demultiplexer];
+const OTHER     = [Multiplexer, Demultiplexer, Encoder];
 
 let XML_COMPONENTS = new Map<string, any>();
 
