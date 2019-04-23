@@ -31,6 +31,9 @@ import {IC} from "../../../models/ioobjects/other/IC";
 import {Images} from "../../Images";
 import {Port} from "../../../models/ioobjects/Port";
 
+import {LABEL} from "../../Config";
+
+
 export const ComponentRenderer = (function() {
 
     const drawBox = function(renderer: Renderer, transform: Transform, selected: boolean) {
@@ -98,7 +101,7 @@ export const ComponentRenderer = (function() {
             }
 
             // Render the IOLabels, does not render labels if they are blank
-            IOLabelRenderer.render(renderer, camera, object);
+            if (LABEL) IOLabelRenderer.render(renderer, camera, object);
 
             renderer.restore();
 

@@ -1,11 +1,13 @@
 import {MainDesignerController} from "./MainDesignerController";
 import {ItemNavController} from "./ItemNavController";
+import {toggleLABEL} from "../utils/Config";
 
 export const SideNavController = (function() {
     const tab = document.getElementById("header-sidenav-open-tab");
     const sidenav = document.getElementById("sidenav");
 
     const sidenavModeCheckbox = <HTMLInputElement>document.getElementById("sidenav-mode-checkbox");
+    const sidenavLabelCheckbox = <HTMLInputElement>document.getElementById("sidenav-label-checkbox");
 
     const overlay = document.getElementById("overlay");
 
@@ -45,7 +47,8 @@ export const SideNavController = (function() {
 
             tab.onclick = () => { SideNavController.Toggle(); };
 
-            sidenavModeCheckbox.onchange = () => { toggleEditMode() };
+            sidenavModeCheckbox.onchange = () => { toggleEditMode(); };
+            sidenavLabelCheckbox.onchange = () => { toggleLABEL(); };
 
             overlay.onclick = () => { SideNavController.Toggle(); };
         },
